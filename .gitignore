@@ -1,0 +1,8 @@
+.idea/
+.vs_code/
+node_modules/
+build/
+temp/
+
+tmp/*
+!tmp/.gitkeep
