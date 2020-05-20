@@ -1,7 +1,8 @@
 {
     "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "airbnb-base",
@@ -37,7 +38,8 @@
         {
           "ts": "never"
         }
-      ]
+      ],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     },
     "settings": {
       "import/resolver": {
