@@ -20,6 +20,12 @@ class Appointment {
   })
   provider_id: string;
 
+  @Column({
+    nullable: true,
+    type: 'uuid',
+  })
+  user_id: string;
+
   @Column('timestamp with time zone')
   date: Date;
 
@@ -32,6 +38,10 @@ class Appointment {
   @ManyToOne(() => User)
   @JoinColumn({ name: 'provider_id' })
   provider: User;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 }
 
 export default Appointment;
