@@ -2,9 +2,11 @@ import faker from 'faker/locale/pt_BR';
 
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
 import ListProvidersService from '@modules/appointments/services/ListProvidersService';
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 
 let fakeUsersRepository: FakeUsersRepository;
 let listProviders: ListProvidersService;
+let fakeCacheProvider: FakeCacheProvider;
 
 let name1: string;
 let email1: string;
@@ -35,8 +37,12 @@ describe('ListProviders', () => {
 
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
+    fakeCacheProvider = new FakeCacheProvider();
 
-    listProviders = new ListProvidersService(fakeUsersRepository);
+    listProviders = new ListProvidersService(
+      fakeUsersRepository,
+      fakeCacheProvider,
+    );
   });
 
   it('should be able to list providers', async () => {
