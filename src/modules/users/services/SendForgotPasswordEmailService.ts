@@ -3,7 +3,7 @@ import path from 'path';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
-import IMailProvider from '@shared/container/providers/MailProvider/models/IMailprovider';
+import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import AppError from '@shared/errors/AppError';
 
 interface IRequest {
